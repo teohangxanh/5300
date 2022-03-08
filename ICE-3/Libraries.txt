@@ -1,0 +1,22 @@
+LIBRARIES: 
+
+import org.apache.commons.logging.log;
+import org.apache.commons.logging.logFactory;
+
+
+COPY FILES to HDFS system:
+
+hdfs dfs -put m.txt /user/cloudera/ICE3/input
+hdfs dfs -put n.txt /user/cloudera/ICE3/input
+
+COMMAND to perform Mapreduce after exporting .jar file:
+
+Hadoop jar ICE3.jar zeenat.com.mapreduce.MatrixMultiply /user/cloudera/ICE3/input /user/cloudera/ICE3/output
+
+where 
+
+ICE3.jar is the MapReduce file exported.
+zeenat.com.mapreduce is the name of the package.
+MatrixMultiply is the name of the class.
+/user/cloudera/ICE3/input is the path to my input files.
+/user/cloudera/ICE3/output is the path for my output file.
